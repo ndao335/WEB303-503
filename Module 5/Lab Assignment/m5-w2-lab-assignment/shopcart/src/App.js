@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from "react";
 import { products } from "./products";
 import Shopcontent from "./displayProducts";
-import Nav from "./navbar";
+import Navigation from "./navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component{
@@ -13,28 +13,30 @@ class App extends Component{
     };
   }
 
-  increase = (item) => {
-    const updatedItem = item.value + 1;
+  handleIncrease = (item) => {
+    const updatedItem = item.value++;
     this.setState({updatedItem});
   }
 
-  decrease = (item) => {
+  handleDecrease = (item) => {
     if(item.value > 0){
-      const updatedItem = item.value - 1;
+      const updatedItem = item.value--;
       this.setState({updatedItem});
     }
   }
 
   render(){
-    let ShoppingContent = <Shopcontent shopitems={this.state.shoppingItem} />;
     return ( 
-      {},
-      (
-        <div className="App">
-          <Nav/>
-          {ShoppingContent}
-        </div>
-      )
+      <div className="App">
+        <Navigation 
+          totalValue = {this.state.shoppingItem.map(item => item.value).reduce((acc, curr, index)=> acc + curr, 0)} 
+          items={this.state.shoppingItem}/>
+        <Shopcontent 
+          shopitems={this.state.shoppingItem}
+          addItem={this.handleIncrease} 
+          removeItem={this.handleDecrease}
+        />
+      </div>
     );
   }
 }
