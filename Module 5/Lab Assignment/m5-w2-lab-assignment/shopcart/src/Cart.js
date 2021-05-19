@@ -1,9 +1,8 @@
 import './App.css';
 import React, { Component } from "react";
-import Navigation from "./navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { products } from "./products";
-import Shopcontent from "./displayProducts";
+import Cartcontent from "./cartDisplay";
 
 class Cart extends Component{
     constructor(props){
@@ -16,10 +15,7 @@ class Cart extends Component{
     render(){
         return ( 
             <div className="Cart">
-            <Navigation 
-                totalValue = {this.state.shoppingItem.map(item => item.value).reduce((acc, curr, index)=> acc + curr, 0)} 
-                items={this.state.shoppingItem}/>
-            <Shopcontent 
+            <Cartcontent 
                 shopitems={this.state.shoppingItem}
             />
             </div>
