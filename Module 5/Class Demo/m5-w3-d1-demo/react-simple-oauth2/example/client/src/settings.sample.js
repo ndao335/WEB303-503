@@ -3,7 +3,7 @@
 
 // Authorization screen base URL
 // e.g. https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#1-request-a-users-github-identity
-export const authorizationUrl = ' https://github.com/login/oauth/authorize';
+export const authorizationUrl = 'https://github.com/login/oauth/authorize';
 
 // To get a client ID, create an app, e.g.
 // GitHub (authorization code grant only): https://github.com/settings/developers
