@@ -23,7 +23,7 @@ function SignIn(){
   
   return (
     <div className="container">
-        <Card style={{ width: '800px' }} className="mx-auto mt-5">
+        <Card style={{ width: '800px', margin: '20px' }} className="mx-auto mt-5">
           <Card.Header className="pb-4">
             <h1>Sign In</h1>
           </Card.Header>
