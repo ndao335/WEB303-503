@@ -1,0 +1,74 @@
+.navbar {
+  background-color: skyblue;
+  color: black;
+  margin: auto;
+  min-height: 100px;
+  height: 200px;
+  display: block !important;
+}
+
+.title{
+  padding: 15px;
+}
+
+.itemAmount{
+  padding: 20px;
+}
+
+.shoppingCart{
+  padding-right: 100px;
+  padding-top: 50px;
+  top: 0px;
+  right: 0px;
+  position: absolute;
+  display: inline-block;
+}
+
+.cartIcon{
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.GroupItem{
+  padding: 50px !important;
+}
+
+.quantityDisplay{
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  margin-top:60px;
+}
+
+.itemcontent{
+  display: flex;
+}
+
+.quantity{
+  padding: 15px 0 0 30px;
+}
+
+.updateButton{
+  height: 30px;
+  margin: 60px 0 0 20px;
+}
+
+.card-text form{
+  width: 250px;
+}
+
+.cartDisplay{
+  display: flex;
+  padding: 20px;
+  border-style: solid;
+  width: 1000px;
+}
+
+.Cart{
+  background-color: white;
+  padding: 50px;
+}
+
+#cartBtn{
+  margin-top: 20px;
+}
