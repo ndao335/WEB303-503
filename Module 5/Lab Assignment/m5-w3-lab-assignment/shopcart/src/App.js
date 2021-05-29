@@ -8,8 +8,6 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      sortType: "normal",
-      listNum: "",
       shoppingItem: products
     };
   }
@@ -26,19 +24,6 @@ class App extends Component{
     }
   }
 
-  onSort = (listNum, sortType) => {
-    listNum.sort((a, b) => {
-      if (sortType === "normal"){
-        return a.id < b.id ? 1 : -1;
-      } else if (sortType === "lowest"){
-        return a.price < b.price ? -1 : 1;
-      } else {
-        return a.price < b.price ? 1 : -1;
-      }
-    });
-    this.setState({ sortType });
-  };
-
   render(){
     return (
       {},
@@ -46,13 +31,7 @@ class App extends Component{
         <div className="App text-secondary">
           <Navigation 
             totalValue = {this.state.shoppingItem.map(item => item.value).reduce((acc, curr, index)=> acc + curr, 0)} 
-            items={this.state.shoppingItem} 
-            handleIncrease={this.handleIncrease} 
-            handleDecrease={this.handleDecrease}
-            sortType={this.state.sortType}
-            listNum={this.state.listNum}
-            onSort={this.onSort}
-          />
+            items={this.state.shoppingItem} handleIncrease={this.handleIncrease} handleDecrease={this.handleDecrease}/>
         </div>
       )
     );

@@ -39,11 +39,7 @@ export default function Navigation(props){
                         <Home 
                             products={props.items} 
                             handleIncrease={props.handleIncrease} 
-                            handleDecrease={props.handleDecrease}
-                            sortType={props.sortType}
-                            listNum={props.listNum}
-                            onSort={props.onSort}
-                        />
+                            handleDecrease={props.handleDecrease}/>
                     </Route>
                     <Route path="/Cart">
                         <Cart products={props.items} totalValue={props.totalValue}/>
