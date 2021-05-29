@@ -3,7 +3,7 @@ import './App.css';
 import countries from 'i18n-iso-countries';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTemperatureLow, faTemperatureHigh, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTemperatureLow, faTemperatureHigh, faMapMakerAlt } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [apiData, setApiData] = useState({}); //apiData state to store the response
@@ -16,7 +16,7 @@ function App() {
   
   //Side effect
   useEffect(() => {
-    fetch(apiURL)
+    fetch(apiUrl)
     .then((res) => res.json())
     .then((data) => setApiData(data));
   }, [apiURL]);
@@ -69,7 +69,7 @@ function App() {
               </p>
               <p className="h5">
                 <FontAwesomeIcon
-                  icon={faMapMarkerAlt}
+                  icon={faMapMakerAlt}
                   className="fas fa-1x mr-2 text-dark"/>{' '}
                   <strong>{apiData.name}</strong>
               </p>
