@@ -6,6 +6,7 @@ import { Modal } from 'react-bootstrap';
 import './App.css';
 
 export default function Shopcontent(props){
+  const { shopitems } = props;
   const [show, setShow] = useState(false);
   const [showImage, setShowImage] = useState({});
 
@@ -17,10 +18,18 @@ export default function Shopcontent(props){
 
   return (
     <ListGroup>
-      {props.shopitems.map(shopitem => {
+      <div className="sortDisplay">
+        <p>Sort Price By</p>
+        <select className="align-middle" onChange={(e) => props.onSort(shopitems, e.target.value)}>
+          <option value="normal">Normal</option>
+          <option value="lowest">Lowest</option>
+          <option value="highest">Highest</option>
+        </select>
+      </div>
+      {shopitems.map(shopitem => {
         return (
           <ListGroupItem key={shopitem.id} className="GroupItem">
-            <h2>{shopitem.desc}</h2>
+            <h2>{shopitem.desc}  ${shopitem.price}</h2>
             <div className="itemcontent">
               <img src={shopitem.image} alt="Shopping" height={150} width={150} onClick={() => handleShow(shopitem)}/>
               <button className="updateButton" onClick={() => props.handleIncrease(shopitem)}>
