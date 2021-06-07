@@ -1,7 +1,9 @@
 const express = require('express');
+//var cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json())
+//app.use(cors());
 require('./app/models/inventory.model.js');
 
 //Configuring the database
